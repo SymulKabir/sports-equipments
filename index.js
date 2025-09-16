@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import "./src/DB/connections.js";
 import productsRoutes from "./src/routes/products.js";
+import userRoutes from "./src/routes/users.js";
 
 const app = express();
 const port = 3000;
@@ -19,6 +20,7 @@ app.use(express.json());
 // Routes
 // ========================
 app.use("/", productsRoutes);
+app.use("/user", userRoutes);
 
 // ========================
 // Default Route
