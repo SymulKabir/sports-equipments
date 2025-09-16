@@ -37,8 +37,6 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body; // for GET we take query params
-
-    console.log({email, password})
     const user = await Users.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
